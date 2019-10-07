@@ -35,7 +35,7 @@ def getStockInfo(lst,stockURL,fpath):
             stockInfo = soup.find("div",attrs={"class":"stick-bets"})
 
             name = stockInfo.find_all(attrs={"class":"bets-name"})[0]
-            infoDict.update({"股票名称":name.text.split()[0]})
+            infoDict.update({"stockname":name.text.split()[0]})
 
             keyList = stockInfo.find_all("dt")
             valueList = stockInfo.find_all("dd")
