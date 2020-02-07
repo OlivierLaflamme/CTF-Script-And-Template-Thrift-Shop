@@ -1,0 +1,5 @@
+<iframe name=windowplz>
+</iframe>
+<script>
+windowplz.alert(1)
+</script>
