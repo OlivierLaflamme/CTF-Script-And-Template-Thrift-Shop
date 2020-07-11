@@ -1,0 +1,34 @@
+systeminfo
+hostname
+echo %username%
+whoami
+net users
+net user <USERNAME>
+ipconfig /all
+route print
+arp -A
+netstat -ano
+netsh firewall show state
+netsh firewall show config
+schtasks /query /fo LIST /v
+tasklist /SVC
+net start
+DRIVERQUERY
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn # System patches and updates
+
+echo %logonserver% # Domain controller
+
+Directories that may contain passwords:
+c:\sysprep.inf
+c:\sysprep\sysprep.xml
+%WINDIR%\Panther\Unattend\Unattended.xml
+%WINDIR%\Panther\Unattended.xml
+
+
+SYSVOL/Groups.xml # \\dc\SYSVOL\dcname\Policies\{31b2..}\Machine\Preferences\Groups\Groups.xml
+Services\Services.xml: Element-Specific Attributes
+ScheduledTasks\ScheduledTasks.xml: Task Inner Element, TaskV2 Inner Element, ImmediateTaskV2 Inner Element
+Printers\Printers.xml: SharedPrinter Element
+Drives\Drives.xml: Element-Specific Attributes
+DataSources\DataSources.xml: Element-Specific Attributes
